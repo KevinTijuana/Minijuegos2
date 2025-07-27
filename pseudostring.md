@@ -35,11 +35,6 @@ Funcion EvaluarOperacion(input)
     partes ← dividir input por "/"
     divisor ← convertir a número partes[1]
 
-    Si divisor es 0
-      lanzar error "No se puede dividir entre cero."
-
-    retorno ← convertir a número partes[0] / divisor
-    retornar retorno
 
   Sino
     lanzar error "Formato no válido. Usa operadores como +, -, *, /."
