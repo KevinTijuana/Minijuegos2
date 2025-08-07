@@ -1,0 +1,34 @@
+static void Entrenar(string stat)
+{
+    Console.Write("¿Cuántas horas quieres entrenar? (1-6): ");
+    int horas = Convert.ToInt32(Console.ReadLine());
+
+    if (horas < 1 || horas > 6)
+    {
+        Console.WriteLine("Horas inválidas. Elige entre 1 y 6.");
+        return;
+    }
+
+    int energiaNecesaria = horas * 10;
+
+    if (energia < energiaNecesaria)
+    {
+        Console.WriteLine("No tienes suficiente energía para entrenar.");
+        return;
+    }
+
+    energia -= energiaNecesaria;
+
+    if (stat == "fuerza")
+    {
+        fuerza += horas * 2;
+        experiencia += horas * 5;
+        Console.WriteLine($"Has entrenado fuerza por {horas} horas. +{horas * 2} fuerza, +{horas * 5} XP.");
+    }
+    else if (stat == "resistencia")
+    {
+        resistencia += horas * 2;
+        experiencia += horas * 5;
+        Console.WriteLine($"Has entrenado resistencia por {horas} horas. +{horas * 2} resistencia, +{horas * 5} XP.");
+    }
+}
